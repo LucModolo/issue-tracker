@@ -1,0 +1,22 @@
+version: "3"
+services:
+  #MySQL Database image
+  my_database:
+    image: mysql
+    #restart: no
+    environment:
+      MYSQL_ROOT_PASSWORD: 8qlcrq5rkijbw6O5Q0Ho
+      MYSQL_DATABASE: my_db
+      MYSQL_USER: seq_user
+      MYSQL_PASSWORD: 8qlcrq5rkijbw6O5Q0Ho
+    ports:
+      - "3306:3306"
+    networks:
+      - sqlnw
+    volumes:
+      - mysql:/var/lib/mysql
+
+networks:
+  sqlnw:
+volumes:
+  mysql:
