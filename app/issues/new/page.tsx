@@ -1,18 +1,17 @@
 'use client';
 
-import { Button, Callout, Text, TextField } from '@radix-ui/themes';
+import { Button, Callout, TextField } from '@radix-ui/themes';
 import dynamic from 'next/dynamic';
-
-import { useForm, Controller } from 'react-hook-form';
+import ErrorMessage from '@/app/componets/ErrorMessage';
+import Spinner from '@/app/componets/Spinner';
+import { createIssueSchema } from '@/app/validationSchemas';
+import { zodResolver } from '@hookform/resolvers/zod';
 import axios from 'axios';
 import 'easymde/dist/easymde.min.css';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { createIssueSchema } from '@/app/validationSchemas';
+import { Controller, useForm } from 'react-hook-form';
 import { z } from 'zod';
-import ErrorMessage from '@/app/componets/ErrorMessage';
-import Spinner from '@/app/componets/Spinner';
 //import delay from 'delay';
 
 const SimpleMDE = dynamic(

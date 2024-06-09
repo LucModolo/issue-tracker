@@ -1,6 +1,6 @@
+import { Skeleton } from '@/app/componets';
 import { Box } from '@radix-ui/themes';
-import React from 'react';
-import Skeleton from 'react-loading-skeleton';
+
 
 const LoadingIssuePage = () => {
   return (
