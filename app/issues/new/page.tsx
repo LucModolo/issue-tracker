@@ -12,6 +12,7 @@ import { createIssueSchema } from '@/app/validationSchemas';
 import { z } from 'zod';
 import ErrorMessage from '@/app/componets/ErrorMessage';
 import Spinner from '@/app/componets/Spinner';
+//import delay from 'delay';
 
 type IssueForm = z.infer<typeof createIssueSchema>;
 
@@ -34,14 +35,19 @@ const NewIssuePage = () => {
   }
 });
 
+//delay(2000);
 
   return (
+
+    // 
     <div className="max-w-xl">
+            
       {error && (
         <Callout.Root color="red" className='mb-5'>
           <Callout.Text>{error}</Callout.Text>
         </Callout.Root>
       )}
+      
       <form
         className="space-y-3"
         onSubmit={onSubmit}
